@@ -20,25 +20,6 @@ Implementation using Python code
 Testing the server and client 
 
 ## PROGRAM:
-## Echo Client.py
-```
-import socket
-
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 65432        # The port used by the server
-
-def echo_client(message):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((HOST, PORT))
-        s.sendall(message.encode())
-        data = s.recv(1024)
-        print(f"Received from server: {data.decode()}")
-
-if __name__ == "__main__":
-    message = input("Enter message to send to server: ")
-    echo_client(message)
-
-```
 ## Echo Server.py
 ```
 import socket
@@ -64,14 +45,32 @@ if __name__ == "__main__":
     echo_server()
 
 ```
+## Echo Client.py
+```
+import socket
 
+HOST = '127.0.0.1'  # The server's hostname or IP address
+PORT = 65432        # The port used by the server
+
+def echo_client(message):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((HOST, PORT))
+        s.sendall(message.encode())
+        data = s.recv(1024)
+        print(f"Received from server: {data.decode()}")
+
+if __name__ == "__main__":
+    message = input("Enter message to send to server: ")
+    echo_client(message)
+
+```
 ## OUTPUT:
-## Client
-![cli](https://github.com/JAYAVARTHAN-P/Echoserver/assets/121369281/c4e30dcb-f338-4d50-99a4-57881a361074)
-
-
 ## Server
-![ser](https://github.com/JAYAVARTHAN-P/Echoserver/assets/121369281/c2009444-d6c9-4fe2-b32b-1bc05adfae9c)
+![Screenshot_2024-03-01_08_33_43](https://github.com/JAYAVARTHAN-P/Echoserver/assets/121369281/e7582f47-021f-4504-b3ca-1860ad7091e1)
+
+## Client 
+
+![Screenshot_2024-03-01_08_33_57](https://github.com/JAYAVARTHAN-P/Echoserver/assets/121369281/c9bdca74-bcf7-404e-9e89-e5922b27b522)
 
 
 
